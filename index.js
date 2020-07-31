@@ -34,7 +34,7 @@ app.get('/', function (req, res) {
 
 app.post('/sendMessage', async function (req, res) {
     let {message, contacts, name} = req.body;
-    res.send('Ok');
+    res.send(req.body);
     // send mail with defined transport object
   let info = await transporter.sendMail({
     from: 'MY PROFILE PAGE', // sender address
