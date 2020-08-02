@@ -29,12 +29,13 @@ let transporter = nodemailer.createTransport({
 
 app.get('/', function (req, res) {
   res.send('Hello World!');
+  console.log(res)
 
 });
 
 app.post('/sendMessage', async function (req, res) {
     let {message, contacts, name} = req.body;
-    res.send(req.body);
+    res.send('ok');
     // send mail with defined transport object
   let info = await transporter.sendMail({
     from: 'MY PROFILE PAGE', // sender address
